@@ -19,13 +19,13 @@ public class ServletSighting extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
         sightingService = Application.getContext()
-                .getBean("studentService", SightingService.class);
+                .getBean("sightingService", SightingService.class);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("text/html");
-        resp.getWriter().println("<h1>Estudiantes registrados<h1>");
+        resp.getWriter().println("<h1>Exploraciones registrados<h1>");
 
         resp.getWriter().println("<ul>");
         for (Sighting sighting : sightingService.getSightings()) {

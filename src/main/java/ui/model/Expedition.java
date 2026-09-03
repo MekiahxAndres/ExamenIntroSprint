@@ -12,6 +12,10 @@ public class Expedition {
     private String startDate;
     private String state;
 
+    public Expedition() {
+
+    }
+
     public Expedition(int id, String name, String code, String region, String baseCamp, String leader, String endDate, String startDate, String state) {
         this.id = id;
         this.name = name;

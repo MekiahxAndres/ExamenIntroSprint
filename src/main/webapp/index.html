@@ -38,34 +38,62 @@
             type="text"
             placeholder="Fecha y Hora del Avistamiento">
     <input
-            name="scientificName"
+            name="location"
             type="text"
-            placeholder="Nombre Cientifico">
+            placeholder="Ubicación">
     <input
-            name="scientificName"
+            name="quantity"
+            type="number"
+            placeholder="Cantidad de observaciones">
+    <input
+            name="confidenceLevel"
             type="text"
-            placeholder="Nombre Cientifico">
+            placeholder="Nivel de Confidencialidad">
+    <input
+            name="expeditionId"
+            type="text"
+            placeholder="Id de la Expedición">
     <button>Enviar</button>
 </form>
 
-<h2>Registrar curso</h2>
-<form action="courses" method="POST">
+<h2>Registrar Expediciones</h2>
+<form action="expeditions" method="POST">
     <input
             name="id"
             type="number"
-            placeholder="Id del curso">
+            placeholder="Id de la expedición">
     <input
             name="name"
             type="text"
-            placeholder="Nombre del curso">
+            placeholder="Nombre de la expedición">
     <input
-            name="professorName"
-            type="text"
-            placeholder="Profesor">
+            name="code"
+            type="number"
+            placeholder="identificador unico de la expedición">
     <input
-            name="schedule"
+            name="region"
             type="text"
-            placeholder="Horario">
+            placeholder="Región">
+    <input
+            name="baseCamp"
+            type="text"
+            placeholder=" lugar donde se establece el campamento principal">
+    <input
+            name="leader"
+            type="text"
+            placeholder="Lider">
+    <input
+            name="startDate"
+            type="text"
+            placeholder="Fecha de inicio">
+    <input
+            name="endDate"
+            type="text"
+            placeholder="Fecha de Fin">
+    <input
+            name="state"
+            type="text"
+            placeholder="Estado">
     <button>Enviar</button>
 </form>
 
