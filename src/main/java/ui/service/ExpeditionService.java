@@ -1,16 +1,24 @@
 package ui.service;
 
+import ui.model.Expedition;
+import ui.repository.ExpeditionRepository;
+
+import java.util.Collection;
+import java.util.List;
+
 public class ExpeditionService {
 
-    private String mensaje;
+    private ExpeditionRepository expeditionRepository;
 
-    public String getMensaje() {
-        return mensaje;
+    public ExpeditionService(ExpeditionRepository expeditionRepository) {
+        this.expeditionRepository = expeditionRepository;
     }
 
-    public void setMensaje(String mensaje) {
-        this.mensaje = mensaje;
+    public void addExpedition(Expedition expedition) {
+        expeditionRepository.save(expedition);
+    }
+
+    public Collection<Expedition> getExpeditions() {
+        return expeditionRepository.findAll();
     }
 }
-
-

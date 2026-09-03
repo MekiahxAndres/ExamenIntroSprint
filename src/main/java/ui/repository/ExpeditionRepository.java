@@ -18,27 +18,15 @@ public class ExpeditionRepository {
         return expeditions.values();
     }
 
-    public void save(Expedition expedition) {
-        courses.put(course.getId(), course);
+    public void save(Expedition expedition) {expeditions.put(expedition.getId(), expedition);
     }
 
     public boolean existById(int courseID) {
-        return courses.containsKey(courseID);
+        return expeditions.containsKey(courseID);
     }
 
     private void initialize() {
-        Course a = new Course();
-        a.setId(1);
-        a.setName("Computación en internet II");
-        a.setSchedule("MA JU 2PM a 4PM");
-        a.setProfessorName("Kevin Rodriguez");
-        courses.put(a.getId(), a);
+        Expedition a = new Expedition();
 
-        Course b = new Course();
-        b.setId(2);
-        b.setName("Estructuras Discretas III");
-        b.setSchedule("MA JU 4PM a 6PM");
-        b.setProfessorName("Juan Marcos Caidedo");
-        courses.put(b.getId(), b);
     }
 }
