@@ -4,7 +4,7 @@ public class Expedition {
 
     private int id;
     private String name;
-    private String Code;
+    private String code;
     private String region;
     private String baseCamp;
     private String leader;
@@ -15,7 +15,7 @@ public class Expedition {
     public Expedition(int id, String name, String code, String region, String baseCamp, String leader, String endDate, String startDate, String state) {
         this.id = id;
         this.name = name;
-        Code = code;
+        this.code = code;
         this.region = region;
         this.baseCamp = baseCamp;
         this.leader = leader;
@@ -41,11 +41,11 @@ public class Expedition {
     }
 
     public String getCode() {
-        return Code;
+        return code;
     }
 
     public void setCode(String code) {
-        Code = code;
+        code = code;
     }
 
     public String getRegion() {

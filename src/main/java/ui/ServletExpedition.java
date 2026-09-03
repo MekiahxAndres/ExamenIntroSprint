@@ -38,11 +38,16 @@ public class ServletExpedition extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));
         String name = req.getParameter("name");
-        String professorName = req.getParameter("professorName");
-        String schedule = req.getParameter("schedule");
+        String code = req.getParameter("code");
+        String region = req.getParameter("region");
+        String baseCamp = req.getParameter("baseCamp");
+        String leader = req.getParameter("leader");
+        String endDate = req.getParameter("endDate");
+        String startDate = req.getParameter("startDate");
+        String state = req.getParameter("state");
         System.out.println("doPost: " + id + " - " + name);
 
-        Expedition expedition = new Expedition();
+        Expedition expedition = new Expedition(id, name, code, region, baseCamp, leader, endDate, startDate, state);
         expeditionService.addExpedition(expedition);
         resp.getWriter().println("expedición registrada: " + expedition);
     }

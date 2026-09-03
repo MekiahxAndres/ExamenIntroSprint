@@ -13,6 +13,11 @@ public class Sighting {
     private String confidenceLevel;
     private int expeditionId;
 
+
+    public Sighting() {
+
+    }
+
     public Sighting(int id, String sightingId, String name, String description, String scientificName, String sightingAt, String location, int quantity, String confidenceLevel, int expeditionId) {
         this.id = id;
         this.sightingId = sightingId;

@@ -1,6 +1,4 @@
 package ui.config;
-
-
 import ui.repository.ExpeditionRepository;
 import ui.repository.SightingRepository;
 import ui.service.ExpeditionService;

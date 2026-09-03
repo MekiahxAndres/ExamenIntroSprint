@@ -1,7 +1,7 @@
-package edu.co.icesi;
+package ui;
 
-import edu.co.icesi.model.Student;
-import edu.co.icesi.service.StudentService;
+import ui.model.Sighting;
+import ui.service.SightingService;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,15 +11,15 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet("/students")
-public class ServletStudents extends HttpServlet {
+@WebServlet("/sightings")
+public class ServletSighting extends HttpServlet {
 
-    private StudentService studentService;
+    private SightingService sightingService;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
-        studentService = Application.getContext()
-                .getBean("studentService", StudentService.class);
+        sightingService = Application.getContext()
+                .getBean("studentService", SightingService.class);
     }
 
     @Override
@@ -28,8 +28,8 @@ public class ServletStudents extends HttpServlet {
         resp.getWriter().println("<h1>Estudiantes registrados<h1>");
 
         resp.getWriter().println("<ul>");
-        for (Student student : studentService.getStudents()) {
-            resp.getWriter().println("<li>" + student + "</li>");
+        for (Sighting sighting : sightingService.getSightings()) {
+            resp.getWriter().println("<li>" + sighting + "</li>");
         }
         resp.getWriter().println("</ul>");
     }
@@ -40,23 +40,40 @@ public class ServletStudents extends HttpServlet {
         // TODO: registrar al estudiante e inscribirlo directamente en el curso con id = courseId.
         // Lo resolvemos en clase.
         String id = req.getParameter("id");
-        String code = req.getParameter("code");
+        String sightingId = req.getParameter("sightingId");
         String name = req.getParameter("name");
-        String program = req.getParameter("program");
-        String courseId = req.getParameter("courseId");
+        String description = req.getParameter("description");
+        String scientificName = req.getParameter("scientificName");
+        String sightingAt = req.getParameter("sightingAt");
+        String location = req.getParameter("location");
+        String quantity = req.getParameter("quantity");
+        String confidenceLevel = req.getParameter("confidenceLevel");
+        String expeditionId = req.getParameter("expeditionId");
 
         System.out.println(id);
-        System.out.println(code);
+        System.out.println(sightingId);
         System.out.println(name);
-        System.out.println(program);
-        System.out.println(courseId);
+        System.out.println(description);
+        System.out.println(scientificName);
+        System.out.println(sightingAt);
+        System.out.println(location);
+        System.out.println(quantity);
+        System.out.println(confidenceLevel);
+        System.out.println(expeditionId);
         //Llamar al service
-        Student student = new Student();
-        student.setId(Integer.parseInt(id));
-        student.setCode(code);
-        student.setName(name);
-        student.setProgram(program);
-        student.setCourseId( Integer.parseInt(courseId) );
-        studentService.addStudent( student );
+
+
+        Sighting sighting = new Sighting();
+        sighting.setId(Integer.parseInt(id));
+        sighting.setName(name);
+        sighting.setDescription(description);
+        sighting.setScientificName(scientificName);
+        sighting.setSightingAt(sightingAt);
+        sighting.setLocation(location);
+        sighting.setQuantity(Integer.parseInt(quantity));
+        sighting.setSightingId(sightingId);
+        sighting.setSightingId(confidenceLevel);
+        sighting.setSightingId(expeditionId);
+        sightingService.addSighting( sighting );
     }
 }

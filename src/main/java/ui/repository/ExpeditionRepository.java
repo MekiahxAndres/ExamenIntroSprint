@@ -25,8 +25,5 @@ public class ExpeditionRepository {
         return expeditions.containsKey(courseID);
     }
 
-    private void initialize() {
-        Expedition a = new Expedition();
 
-    }
 }
