@@ -1,6 +1,6 @@
-package com.example.beans;
+package ui.service;
 
-public class MyFirstBean {
+public class ExpeditionService {
 
     private String mensaje;
 

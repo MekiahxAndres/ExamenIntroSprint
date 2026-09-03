@@ -1,4 +1,4 @@
-package com.example.model;
+package ui.model;
 
 public class Sighting {
 
